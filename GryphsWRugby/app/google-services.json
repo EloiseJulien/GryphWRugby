@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1000131700644",
+    "firebase_url": "https://gryphswrugbyproject.firebaseio.com",
+    "project_id": "gryphswrugbyproject",
+    "storage_bucket": "gryphswrugbyproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000131700644:android:3e0148200cc0b7e1",
+        "android_client_info": {
+          "package_name": "ayoolamakinde.eloisejulien.gryphswrugby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000131700644-gujtvurm02voghs2tqr1mnecpcf7u7h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ayoolamakinde.eloisejulien.gryphswrugby",
+            "certificate_hash": "419c4190cbfa50ed980bb2db0118a26150f248cf"
+          }
+        },
+        {
+          "client_id": "1000131700644-akf6uf5i81pj7ahnpv7tdja9if5gh2lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx4sBYX_rRQvZjtDhOoDSNA8p9xk-XG38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000131700644-akf6uf5i81pj7ahnpv7tdja9if5gh2lh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

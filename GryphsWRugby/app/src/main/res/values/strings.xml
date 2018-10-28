@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GryphsWRugby</string>
+    <string name="title_activity_chat">Chat</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home_coach">HomeCoachActivity</string>
+    <string name="title_activity_new_login">NewLoginActivity</string>
+</resources>

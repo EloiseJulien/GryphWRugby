@@ -3,16 +3,38 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlack"
     android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER LOGIN"
+        android:layout_gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        />
 
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textStyle="bold"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Email"/>
+
+
 
     <EditText
         android:id="@+id/edit_password"
@@ -20,6 +42,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:layout_marginStart="20dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textStyle="bold"
         android:layout_marginEnd="20dp"
         android:hint="Password"/>
 
@@ -29,7 +54,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="Connection"/>
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:text="Login"/>
 
 
 

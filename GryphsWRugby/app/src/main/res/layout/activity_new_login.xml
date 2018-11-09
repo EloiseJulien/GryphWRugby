@@ -2,22 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
+    android:background="@color/colorBlack"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"/>
 
     <EditText
         android:id="@+id/new_login_edit_fullname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:textColor="@color/colorWhite"
         android:layout_marginEnd="20dp"
+        android:textColorHint="@color/colorWhite"
         android:hint="Fullname"/>
 
     <EditText
         android:id="@+id/new_login_edit_email"
         android:layout_width="match_parent"
+        android:textColorHint="@color/colorWhite"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
+        android:textColor="@color/colorWhite"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Email"/>
@@ -25,6 +37,8 @@
     <EditText
         android:id="@+id/new_login_edit_password"
         android:layout_width="match_parent"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:layout_marginStart="20dp"
@@ -34,7 +48,9 @@
     <EditText
         android:id="@+id/new_login_confirm_password"
         android:layout_width="match_parent"
+        android:textColor="@color/colorWhite"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/colorWhite"
         android:inputType="textPassword"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -44,9 +60,12 @@
         android:id="@+id/new_login_connexion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="Connection"/>
+        android:text="Login"/>
 
 
 </LinearLayout>

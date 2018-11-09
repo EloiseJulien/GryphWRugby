@@ -4,20 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlack"
     android:orientation="vertical"
     tools:context=".HomeCoachActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"/>
+
 
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Email"/>
+        android:textColorHint="@color/colorWhite"
+        android:hint="Enter Email Here"
+        android:textColor="@color/colorWhite"
+        android:padding="20dp"
+        android:shadowColor="@color/colorWhite"
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/send_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:layout_margin="20dp"
         android:text="Send invitation"/>
 
     <Button
@@ -25,6 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
         android:layout_marginEnd="20dp"
         android:text="CHAT"/>
 

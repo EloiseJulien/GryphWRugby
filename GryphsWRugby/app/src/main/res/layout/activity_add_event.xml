@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/event_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Name"
+            android:padding="20dp"/>
+
+        <EditText
+            android:id="@+id/event_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Location"
+            android:padding="20dp"/>
+
+        <EditText
+            android:id="@+id/event_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Date"
+            android:padding="20dp"
+            android:inputType="datetime"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/event_startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Start Time"
+                android:padding="20dp"
+                android:inputType="time"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/am_starttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:textSize="15dp"
+                    android:text="Am"
+                    android:layout_marginStart="10dp"
+                    android:onClick="onRadioButton"/>
+                <RadioButton android:id="@+id/pm_starttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:textSize="15dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Pm"
+                    android:onClick="onRadioButton"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/event_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="End Time"
+                android:padding="20dp"
+                android:inputType="time"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/am_endtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:textSize="15dp"
+                    android:text="Am"
+                    android:layout_marginStart="10dp"
+                    android:onClick="onRadioButton"/>
+                <RadioButton android:id="@+id/pm_endtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:textSize="15dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Pm"
+                    android:onClick="onRadioButton"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/save_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/colorWhite"
+            android:onClick="saveEvent"
+            android:layout_margin="20dp"
+            android:text="Save Event"/>
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/add_event_navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/colorWhite"
+        app:itemTextColor="@color/colorWhite"
+        app:menu="@menu/menu_navigation"/>
+
+
+
+</RelativeLayout>

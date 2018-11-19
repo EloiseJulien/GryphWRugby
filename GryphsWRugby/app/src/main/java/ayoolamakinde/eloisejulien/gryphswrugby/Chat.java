@@ -2,27 +2,23 @@ package ayoolamakinde.eloisejulien.gryphswrugby;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
 
@@ -42,6 +38,7 @@ public class Chat extends BaseActivity implements ChatAdapter.Listener{
     @BindView(R.id.activity_mentor_chat_text_view_recycler_view_empty) TextView textViewRecyclerViewEmpty;
     @BindView(R.id.activity_mentor_chat_message_edit_text) TextInputEditText editTextMessage;
     @BindView(R.id.activity_mentor_chat_image_chosen_preview) ImageView imageViewPreview;
+    @BindView(R.id.chat_navigationView) BottomNavigationView bottomNavigationView;
 
     // FOR DATA
     // 2 - Declaring Adapter and data
@@ -59,6 +56,39 @@ public class Chat extends BaseActivity implements ChatAdapter.Listener{
         mAuth = FirebaseAuth.getInstance();
         this.configureRecyclerView(CHAT_NAME_TEAM);
         getCurrentUserFromFirestore();
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_calendar:
+                        if(modelCurrentUser != null){
+                            if(modelCurrentUser.getIsCoach()){
+                                Intent intent2 = new Intent(Chat.this, CalendarCoachActivity.class);
+                                startActivity(intent2);
+                            } else {
+                                Intent intent2 = new Intent(Chat.this, CalendarActivity.class);
+                                startActivity(intent2);
+                            }
+                        }
+                        return true;
+                    case R.id.navigation_home:
+                        if(modelCurrentUser != null){
+                            if(modelCurrentUser.getIsCoach()){
+                                Intent intent2 = new Intent(Chat.this, HomeCoachActivity.class);
+                                startActivity(intent2);
+                            } else {
+                                Intent intent2 = new Intent(Chat.this, HomeActivity.class);
+                                startActivity(intent2);
+                            }
+                        }
+                }
+
+                return true;
+            }
+        });
+
     }
 
     @Override
@@ -79,10 +109,6 @@ public class Chat extends BaseActivity implements ChatAdapter.Listener{
             this.editTextMessage.setText("");
         }
     }
-
-
-    @OnClick(R.id.activity_mentor_chat_add_file_button)
-    public void onClickAddFile() { }
 
     // --------------------
     // REST REQUESTS
@@ -149,16 +175,6 @@ public class Chat extends BaseActivity implements ChatAdapter.Listener{
                 Intent intent = new Intent(this, Login.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_home:
-                if(modelCurrentUser != null){
-                    if(modelCurrentUser.getIsCoach()){
-                        Intent intent2 = new Intent(this, HomeCoachActivity.class);
-                        startActivity(intent2);
-                    } else {
-                        Intent intent2 = new Intent(this, HomeActivity.class);
-                        startActivity(intent2);
-                    }
-                }
         }
 
         return super.onOptionsItemSelected(item);

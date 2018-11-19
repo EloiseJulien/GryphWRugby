@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarActivity">
+
+   <RelativeLayout
+       android:id="@+id/date_bar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_alignParentTop="true"
+       android:background="@color/colorGrey">
+
+       <ImageButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/chevron_left"
+           android:layout_marginStart="20dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           android:layout_alignParentStart="true"
+           android:onClick="OnClickLeft"
+           android:background="@drawable/ic_chevron_left"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/date"
+           android:text="DATE"
+           android:textSize="20dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           android:textColor="@color/colorBlack"
+           android:textStyle="bold"
+           android:layout_centerInParent="true"/>
+
+       <ImageButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/chevron_right"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           android:onClick="OnClickRight"
+           android:layout_alignParentEnd="true"
+           android:background="@drawable/ic_chevron_right"/>
+
+   </RelativeLayout>
+
+    <TextView
+        android:id="@+id/nothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No event this day"
+        android:textSize="25dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/list_event"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_bar">
+    </ListView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/calendar_navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/colorWhite"
+        app:itemTextColor="@color/colorWhite"
+        app:menu="@menu/menu_navigation"/>
+
+</RelativeLayout>

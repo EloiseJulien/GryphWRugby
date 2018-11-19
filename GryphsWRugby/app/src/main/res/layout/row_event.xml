@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/row_event_name"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Practice"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/row_event_location"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:text="Location"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/row_event_time"
+        android:layout_marginStart="20dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorAccent"
+        android:text="5:00 - 7:00"/>
+
+
+
+</LinearLayout>

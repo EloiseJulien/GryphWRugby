@@ -47,7 +47,7 @@ public class ChatViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         ButterKnife.bind(this, itemView);
         colorCurrentUser = ContextCompat.getColor(itemView.getContext(), R.color.colorAccent);
-        colorRemoteUser = ContextCompat.getColor(itemView.getContext(), R.color.colorPrimary);
+        colorRemoteUser = ContextCompat.getColor(itemView.getContext(), R.color.colorGrey);
     }
 
     public void updateWithMessage(ChatMessage message, String currentUserId, RequestManager glide){

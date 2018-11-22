@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ayoolamakinde.eloisejulien.gryphswrugby">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="@string/default_notification_channel_id" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +15,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service android:name=".services.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">>
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".services.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".Login"
             android:configChanges="orientation"
@@ -73,6 +95,8 @@
             android:name=".CalendarCoachActivity"
             android:label="@string/title_activity_calendar_coach"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
+
 
 </manifest>

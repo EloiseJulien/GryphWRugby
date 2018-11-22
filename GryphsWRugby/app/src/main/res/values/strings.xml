@@ -8,4 +8,5 @@
     <string name="title_activity_add_event">AddEventActivity</string>
     <string name="title_activity_modif_event">ModifEvent</string>
     <string name="title_activity_calendar_coach">CalendarCoachActivity</string>
+    <string name="default_notification_channel_id">Channel ID</string>
 </resources>

@@ -5,8 +5,8 @@
     <string name="title_activity_home_coach">Coach-Home</string>
     <string name="title_activity_new_login">New Player Registration</string>
     <string name="title_activity_calendar">Calendar</string>
-    <string name="title_activity_add_event">AddEventActivity</string>
-    <string name="title_activity_modif_event">ModifEvent</string>
-    <string name="title_activity_calendar_coach">CalendarCoachActivity</string>
+    <string name="title_activity_add_event">Add Event</string>
+    <string name="title_activity_modif_event">Modify Event</string>
+    <string name="title_activity_calendar_coach">Calendar</string>
     <string name="default_notification_channel_id">Channel ID</string>
 </resources>

@@ -123,6 +123,9 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e)
             {
+                if(queryDocumentSnapshots == null){
+                    return;
+                }
                 for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments())
                 {
                     Event event = doc.toObject(Event.class);

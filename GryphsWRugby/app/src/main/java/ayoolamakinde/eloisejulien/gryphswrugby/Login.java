@@ -52,7 +52,9 @@ public class Login extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
-
+        if(isCurrentUserLogged()){
+            connection();
+        }
     }
 
 
@@ -89,16 +91,6 @@ public class Login extends BaseActivity{
     public void connection(){
         Intent intent = new Intent(this, Chat.class);
         startActivity(intent);
-       /*getCurrentUserFromFirestore();
-        if(modelUser != null) {
-            if (modelUser.getIsCoach()) {
-                Intent intent = new Intent(this, HomeCoachActivity.class);
-                startActivity(intent);
-            } else {
-                Intent intent = new Intent(this, HomeActivity.class);
-                startActivity(intent);
-            }
-        }*/
     }
 
     private void getCurrentUserFromFirestore(){

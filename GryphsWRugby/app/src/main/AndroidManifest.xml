@@ -14,8 +14,11 @@
             android:name=".Login"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aaced57d3e58fd5a34c09e3f2134b9a5ca161271
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,6 +79,7 @@
             android:name=".CalendarCoachActivity"
             android:label="@string/title_activity_calendar_coach"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+<<<<<<< HEAD
 
         <receiver android:name="MyReceiver">
 
@@ -85,6 +89,8 @@
             </intent-filter>
 
         </receiver>
+=======
+>>>>>>> aaced57d3e58fd5a34c09e3f2134b9a5ca161271
     </application>
 
 </manifest>

@@ -1,17 +1,22 @@
 package ayoolamakinde.eloisejulien.gryphswrugby;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -53,7 +58,19 @@ public class ChatViewHolder extends RecyclerView.ViewHolder {
     public void updateWithMessage(ChatMessage message, String currentUserId, RequestManager glide){
 
         // Check if current user is the sender
-        Boolean isCurrentUser = message.getUserSender().getUid().equals(currentUserId);
+        Boolean isCurrentUser;
+        if(isCurrentUser = message.getUserSender().getUid().equals(currentUserId)) {
+            isCurrentUser = message.getUserSender().getUid().equals(currentUserId);
+        }
+
+
+        else{
+
+
+
+
+        }
+        isCurrentUser = message.getUserSender().getUid().equals(currentUserId);
 
         // Update nameUser TextView
         this.nameUser.setText(isCurrentUser ? "" : message.getUserSender().getUsername());

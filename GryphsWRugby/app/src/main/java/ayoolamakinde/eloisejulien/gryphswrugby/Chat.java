@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import ayoolamakinde.eloisejulien.gryphswrugby.api.MessageHelper;
 import ayoolamakinde.eloisejulien.gryphswrugby.api.UserHelper;
@@ -32,6 +33,8 @@ import butterknife.OnClick;
 public class Chat extends BaseActivity implements ChatAdapter.Listener{
 
     private FirebaseAuth mAuth;
+
+
     // FOR DESIGN
     // 1 - Getting all views needed
     @BindView(R.id.activity_mentor_chat_recycler_view) RecyclerView recyclerView;
@@ -157,7 +160,15 @@ public class Chat extends BaseActivity implements ChatAdapter.Listener{
     @Override
     public void onDataChanged() {
         // 7 - Show TextView in case RecyclerView is empty
+        broadcastIntent(null);
         textViewRecyclerViewEmpty.setVisibility(this.mentorChatAdapter.getItemCount() == 0 ? View.VISIBLE : View.GONE);
+
+
+    }
+
+    public void broadcastIntent(View view){
+        Intent intent = new Intent();
+        intent.setAction("com.tutorialspoint.CUSTOM_INTENT"); sendBroadcast(intent);
     }
 
 

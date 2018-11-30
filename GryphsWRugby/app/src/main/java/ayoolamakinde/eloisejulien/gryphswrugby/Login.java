@@ -110,6 +110,11 @@ public class Login extends BaseActivity{
         });
     }
 
+    public void broadcastIntent(View view){
+        Intent intent = new Intent();
+        intent.setAction("com.tutorialspoint.CUSTOM_INTENT"); sendBroadcast(intent);
+    }
+
 
     private boolean validateForm() {
         boolean valid = true;

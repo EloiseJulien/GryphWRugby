@@ -1,9 +1,20 @@
 package ayoolamakinde.eloisejulien.gryphswrugby;
 
+<<<<<<< HEAD
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
+=======
+>>>>>>> aaced57d3e58fd5a34c09e3f2134b9a5ca161271
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+<<<<<<< HEAD
+import android.support.v4.app.NotificationCompat;
+=======
+>>>>>>> aaced57d3e58fd5a34c09e3f2134b9a5ca161271
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -75,6 +86,11 @@ public class AddEventActivity extends BaseActivity {
                 return true;
             }
         });
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> aaced57d3e58fd5a34c09e3f2134b9a5ca161271
     }
 
     @Override
@@ -138,6 +154,11 @@ public class AddEventActivity extends BaseActivity {
         return valid;
     }
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> aaced57d3e58fd5a34c09e3f2134b9a5ca161271
     public void saveEvent(View view){
         if(!validateForm()){
             return;

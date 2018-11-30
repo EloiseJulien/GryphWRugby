@@ -117,12 +117,15 @@ public class CalendarCoachActivity extends AppCompatActivity {
 
     private void loadEvent(){
         events = new ArrayList<>();
-        Query query = EventHelper.getEventDate(dateFormat.format(calendar.getTime()));
+        final Query query = EventHelper.getEventDate(dateFormat.format(calendar.getTime()));
 
         query.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e)
             {
+                if(queryDocumentSnapshots == null){
+                    return;
+                }
                 for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments())
                 {
                     Event event = doc.toObject(Event.class);

@@ -3,6 +3,7 @@ package ayoolamakinde.eloisejulien.gryphswrugby;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -28,6 +29,7 @@ public class HomeCoachActivity extends AppCompatActivity {
     private String TAG = "Home";
     private FirebaseAuth mAuth;
     private EditText editEmail;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,22 +37,41 @@ public class HomeCoachActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_coach);
         mAuth = FirebaseAuth.getInstance();
         editEmail = findViewById(R.id.edit_email);
-        Button button1 = (Button) findViewById(R.id.coach_chat);
-        Button button2 = (Button) findViewById(R.id.send_email);
+        Button button1 = (Button) findViewById(R.id.send_email);
+        Button button2 = (Button) findViewById(R.id.add_event);
+
+        bottomNavigationView = findViewById(R.id.home_coach_navigationView);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_calendar:
+                        Intent intent = new Intent(HomeCoachActivity.this, CalendarCoachActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case R.id.navigation_chat:
+                        goToChat();
+                }
+
+                return true;
+            }
+        });
+
 
         button1.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                goToChat();
+                sendEmail();
             }
         });
-
         button2.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                sendEmail();
+                Intent intent = new Intent(HomeCoachActivity.this, AddEventActivity.class);
+                startActivity(intent);
             }
         });
     }
